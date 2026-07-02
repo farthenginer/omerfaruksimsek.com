@@ -1,0 +1,55 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+	const projects = await getCollection('projects');
+	return projects.map((project) => ({
+		params: { slug: project.id },
+		props: project,
+	}));
+}
+
+const project = Astro.props;
+const { Content } = await render(project);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={project.data.title} description={project.data.description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<article>
+				{project.data.heroImage && (
+					<img src={project.data.heroImage.src} alt={project.data.title} />
+				)}
+				<h1>{project.data.title}</h1>
+				<p>{project.data.description}</p>
+				<div>
+					{project.data.tags && project.data.tags.map((tag) => (
+						<span>{tag}</span>
+					))}
+				</div>
+				<div>
+					{project.data.githubUrl && (
+						<a href={project.data.githubUrl} target="_blank" rel="noopener">
+							GitHub →
+						</a>
+					)}
+					{project.data.liveUrl && (
+						<a href={project.data.liveUrl} target="_blank" rel="noopener">
+							Live Demo →
+						</a>
+					)}
+				</div>
+				<Content />
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const projects = (await getCollection('projects')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Projects" description="My projects" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Projects</h1>
+			<section>
+				{projects.map((project) => (
+					<article>
+						<a href={`/projects/${project.id}/`}>
+							{project.data.heroImage && (
+								<img src={project.data.heroImage.src} alt={project.data.title} />
+							)}
+							<h2>{project.data.title}</h2>
+							<p>{project.data.description}</p>
+							<div>
+								{project.data.tags && project.data.tags.map((tag) => (
+									<span>{tag}</span>
+								))}
+							</div>
+							<div>
+								{project.data.githubUrl && (
+									<a href={project.data.githubUrl} target="_blank" rel="noopener">GitHub</a>
+								)}
+								{project.data.liveUrl && (
+									<a href={project.data.liveUrl} target="_blank" rel="noopener">Live Demo</a>
+								)}
+							</div>
+						</a>
+					</article>
+				))}
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
