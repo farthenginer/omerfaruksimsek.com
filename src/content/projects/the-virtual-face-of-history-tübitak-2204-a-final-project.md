@@ -2,7 +2,7 @@
 title: The Virtual Face of History (TÜBİTAK 2204-A Final Project)
 description: A multiplayer educational game about the Turkish migration into Anatolia.
 pubDate: Apr 20 2025
-heroImage: ../../assets/uploads/unnamed-31.png
+heroImage: ../../assets/uploads/unnamed-32.png
 liveUrl: https://play.google.com/store/apps/details?id=com.beekgames.tarihinsanalyuzumcal
 tags:
   - Unity
