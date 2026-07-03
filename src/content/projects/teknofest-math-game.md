@@ -3,7 +3,7 @@ title: Teknofest Math Game
 description: A high-contrast math game designed for users with visual
   impairments and color blindness.
 pubDate: Apr 18 2024
-heroImage: ../../assets/uploads/608653388_899834832511332_1073769533303474740_n.jpg
+heroImage: ../../assets/uploads/adsız-tasarım-220.png
 tags:
   - Accessibility
   - Unity
