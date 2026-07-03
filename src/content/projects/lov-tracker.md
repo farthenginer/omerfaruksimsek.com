@@ -6,9 +6,9 @@ pubDate: Apr 13 2026
 heroImage: ../../assets/uploads/adsız-tasarım-2.png
 liveUrl: https://play.google.com/store/apps/details?id=com.beek.lovapplication&hl=tr
 tags:
-  - "#tracker"
-  - "#socialmedia"
-  - "#mobileapp"
+  - Tracker
+  - Socialmedia
+  - Mobileapp
 ---
 LOV is a tool designed to track changes in publicly available social media profiles.
 
