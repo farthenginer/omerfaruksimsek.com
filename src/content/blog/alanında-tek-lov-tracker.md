@@ -1,9 +1,9 @@
 ---
 title: From a Crush to a Product; LOV – Tracker
-description: "Ne kadar ararsanız arayın: Uygulama mağazalarında LOV'un yaptığı
-  işlevin aynısını yapan bir mobile app bulamazsınız. Kulağa garip geldiğinin
-  farkındayım. Hazırsanız LOV'un ortaya çıkma ve zorlu yayın süreçlerinden
-  bahsedelim!"
+description: No matter how much you search, you won’t find a mobile app in app
+  stores that does exactly what LOV does. I’m aware that sounds a bit unusual.
+  If you’re ready, let’s talk about how LOV came to life and the challenging
+  journey of getting it published!
 pubDate: Jul 04 2026
 heroImage: ../../assets/uploads/adsız-tasarım-232.png
 ---
