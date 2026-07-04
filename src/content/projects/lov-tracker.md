@@ -3,7 +3,7 @@ title: LOV - Tracker
 description: LOV is a tool used to track changes in publicly available social
   media profiles.
 pubDate: Apr 13 2026
-heroImage: ../../assets/uploads/adsız-tasarım-2.png
+heroImage: ../../assets/uploads/adsız-tasarım-227.png
 liveUrl: https://play.google.com/store/apps/details?id=com.beek.lovapplication&hl=tr
 tags:
   - Tracker
