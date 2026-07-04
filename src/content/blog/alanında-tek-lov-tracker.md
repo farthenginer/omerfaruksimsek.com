@@ -1,5 +1,5 @@
 ---
-title: Platonikten Ürüne; LOV - Tracker
+title: From a Crush to a Product; LOV – Tracker
 description: "Ne kadar ararsanız arayın: Uygulama mağazalarında LOV'un yaptığı
   işlevin aynısını yapan bir mobile app bulamazsınız. Kulağa garip geldiğinin
   farkındayım. Hazırsanız LOV'un ortaya çıkma ve zorlu yayın süreçlerinden
