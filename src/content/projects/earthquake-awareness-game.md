@@ -3,7 +3,7 @@ title: Earthquake Awareness Game
 description: A scenario-based educational game that teaches correct actions
   before, during, and after an earthquake.
 pubDate: Jun 15 2023
-heroImage: ../../assets/uploads/eb5e41d6-d2dd-4f41-9eb9-c5c53ec2f37f.png
+heroImage: ../../assets/uploads/adsız-tasarım-231.png
 tags:
   - Unity
   - Serious Game
