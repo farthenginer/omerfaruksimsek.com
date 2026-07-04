@@ -12,6 +12,11 @@ import Header from '../components/Header.astro';
 	<body>
 		<Header />
 		<main>
+			<!-- PHOTO -->
+			<section class="photo-wrap">
+				<img src="/profile.jpg" alt="Ömer Faruk Şimşek" class="profile-photo" />
+			</section>
+
 			<!-- INTRO -->
 			<section class="intro">
 				<span class="eyebrow">About Me</span>
@@ -129,16 +134,68 @@ import Header from '../components/Header.astro';
 				<p>Want to work together or just say hi?</p>
 				<a href="mailto:info@omerfaruksimsek.com" class="btn-primary">Get in touch →</a>
 			</section>
+
+			<!-- CONTACT FORM -->
+			<section class="section contact-section">
+				<h2>Contact</h2>
+				<p class="contact-lead">Have a project, a question, or just want to say hi? Fill the form below.</p>
+
+				<form
+					name="contact"
+					method="POST"
+					data-netlify="true"
+					netlify-honeypot="bot-field"
+					class="contact-form"
+				>
+					<input type="hidden" name="form-name" value="contact" />
+					<p class="hidden-field">
+						<label>Don't fill this out if you're human: <input name="bot-field" /></label>
+					</p>
+
+					<div class="form-row">
+						<label for="name">Name</label>
+						<input type="text" id="name" name="name" required />
+					</div>
+
+					<div class="form-row">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" required />
+					</div>
+
+					<div class="form-row">
+						<label for="message">Message</label>
+						<textarea id="message" name="message" rows="5" required></textarea>
+					</div>
+
+					<button type="submit" class="btn-primary">Send message →</button>
+				</form>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
 
 <style>
+	/* PHOTO */
+	.photo-wrap {
+		display: flex;
+		justify-content: center;
+		padding-top: 2.5rem;
+	}
+
+	.profile-photo {
+		width: 96px;
+		height: 96px;
+		border-radius: 50%;
+		object-fit: cover;
+		border: 1px solid var(--border);
+	}
+
 	.intro {
-		padding: 3rem 0 2.5rem;
+		padding: 1.5rem 0 2.5rem;
 		border-bottom: 1px solid var(--border);
 		margin-bottom: 3rem;
+		text-align: center;
 	}
 
 	.eyebrow {
@@ -162,7 +219,7 @@ import Header from '../components/Header.astro';
 		color: var(--text-muted);
 		max-width: 560px;
 		line-height: 1.7;
-		margin: 0;
+		margin: 0 auto;
 	}
 
 	.section {
@@ -291,12 +348,72 @@ import Header from '../components/Header.astro';
 		text-decoration: none;
 		transition: opacity 0.15s ease;
 		white-space: nowrap;
+		border: none;
+		cursor: pointer;
+		font-family: inherit;
 	}
 
 	.btn-primary:hover {
 		opacity: 0.85;
 		text-decoration: none;
 		color: var(--bg);
+	}
+
+	/* CONTACT FORM */
+	.contact-section {
+		border-bottom: none;
+	}
+
+	.contact-lead {
+		color: var(--text-muted);
+		margin-bottom: 1.5rem;
+	}
+
+	.hidden-field {
+		position: absolute;
+		left: -9999px;
+	}
+
+	.contact-form {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+		max-width: 480px;
+	}
+
+	.form-row {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+	}
+
+	.form-row label {
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: var(--text-muted);
+	}
+
+	.form-row input,
+	.form-row textarea {
+		font-family: inherit;
+		font-size: 0.95rem;
+		padding: 0.6rem 0.75rem;
+		border-radius: 7px;
+		border: 1px solid var(--border);
+		background: var(--bg-secondary);
+		color: var(--text);
+		resize: vertical;
+	}
+
+	.form-row input:focus,
+	.form-row textarea:focus {
+		outline: none;
+		border-color: var(--accent);
+	}
+
+	.contact-form .btn-primary {
+		align-self: flex-start;
+		margin-top: 0.5rem;
 	}
 
 	@media (max-width: 720px) {
