@@ -3,7 +3,7 @@ title: Environmental Awareness Game
 description: A three-part educational game that raises awareness about
   environmental issues through gameplay.
 pubDate: Sep 15 2023
-heroImage: ../../assets/uploads/whatsapp-image-2025-07-07-at-21.50.44.jpg
+heroImage: ../../assets/uploads/adsız-tasarım-229.png
 tags:
   - Unity
   - Game Design
