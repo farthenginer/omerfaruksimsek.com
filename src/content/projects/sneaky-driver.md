@@ -15,6 +15,8 @@ tags:
 ---
 Sneaky Driver is an endless driving game where players avoid obstacles, survive for as long as possible, and achieve the highest score. The project was developed in Unity 2020 as one of my earliest freelance projects.
 
+![](../../assets/uploads/sd1.png)
+
 ### Key Features
 
 * Endless driving gameplay.
@@ -34,3 +36,7 @@ Platform: Windows
 Genre: Endless Driving
 
 Core Logic: Endless level generation, obstacle management, score tracking, and vehicle controller.
+
+1. ![](../../assets/uploads/sd2.png)
+
+   ![](../../assets/uploads/sd3.png)
