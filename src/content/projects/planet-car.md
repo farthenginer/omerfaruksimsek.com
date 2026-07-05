@@ -15,6 +15,8 @@ tags:
 ---
 Planet Car is an arcade driving game built around a custom gravity system that allows a vehicle to drive around a small rotating planet. Players collect blue orbs while avoiding mines using physics-based movement.
 
+![](../../assets/uploads/pc1.png)
+
 ### Key Features
 
 * Custom planetary gravity system.
@@ -34,3 +36,9 @@ Platform: Windows
 Genre: Arcade / Physics
 
 Core Logic: Custom gravity calculations, planet-based movement, collectible system, and collision detection.
+
+
+
+![](../../assets/uploads/pc2.png)
+
+![](../../assets/uploads/pc3.png)
