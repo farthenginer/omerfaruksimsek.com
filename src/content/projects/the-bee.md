@@ -5,6 +5,7 @@ description: The Bee is a first-person action game where players defend
   environment. It was developed in Unity 2020 as one of my first freelance
   projects at the age of 14.
 pubDate: Jul 14 2022
+heroImage: ../../assets/uploads/adsız-tasarım-60-.png
 tags:
   - Unity 2020
   - C#
