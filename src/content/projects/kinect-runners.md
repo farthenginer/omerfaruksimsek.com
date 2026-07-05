@@ -13,6 +13,8 @@ tags:
 ---
 This project utilizes the Xbox Kinect sensor to track player movements in real time. Designed especially for children, the system detects actions such as jumping and translates them directly into the game. It offers a highly interactive and physically engaging experience.
 
+![](../../assets/uploads/2.png)
+
 **Technical Details**
 
 * Engine: Unity
@@ -20,3 +22,4 @@ This project utilizes the Xbox Kinect sensor to track player movements in real t
 * Tracking: Skeleton tracking system
 * Integration: Custom Kinect-Unity bridge
 * Gameplay: Motion-based interaction
+* ![](../../assets/uploads/1.png)
