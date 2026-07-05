@@ -16,6 +16,10 @@ tags:
 ---
 Cube Master is a precision-based obstacle game inspired by the popular "World's Hardest Game" style. Players guide a red cube through increasingly difficult obstacle courses while avoiding hazards and reaching the finish line.
 
+![](../../assets/uploads/cb1.png)
+
+![](../../assets/uploads/cb33.png)
+
 ### Key Features
 
 * Precision movement mechanics.
@@ -35,3 +39,5 @@ Platform: Windows
 Genre: Puzzle / Skill-Based
 
 Core Logic: Precision movement, obstacle collision system, checkpoint management, and level progression.
+
+![](../../assets/uploads/cb2.png)
