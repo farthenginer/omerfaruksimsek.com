@@ -21,8 +21,8 @@ This project is a serious game designed to promote environmental responsibility.
 * Gameplay: Task-based progression
 * Systems: Resource management mechanics
 * Visuals: Low-poly environmental assets
-* Design: Level-based learning syste
+* Design: Level-based learning system
 
-  * ![](../../assets/uploads/whatsapp-image-2025-07-07-at-21.50.46.jpg)
+  ![](../../assets/uploads/whatsapp-image-2025-07-07-at-21.50.44.jpg)
 
-    ![](../../assets/uploads/whatsapp-image-2025-07-07-at-21.50.44.jpg)
+  ![](../../assets/uploads/whatsapp-image-2025-07-07-at-21.50.46.jpg)
