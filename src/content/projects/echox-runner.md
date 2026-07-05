@@ -11,6 +11,8 @@ tags:
 ---
 In this game, players navigate through a space environment, avoid obstacles, and collect coins. The collected currency can be used for upgrades in the in-game store. Developed for a publisher, the project focuses on performance and monetization.
 
+![](../../assets/uploads/echox-5.png)
+
 **Technical Details**
 
 * Engine: Unity
