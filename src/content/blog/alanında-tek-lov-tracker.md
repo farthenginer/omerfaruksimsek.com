@@ -34,11 +34,9 @@ If you get a bad score on an exam, you can fix it in the next one. If you have a
 
 I think I’m good at building minimum viable products. Since LOV was based on my own problem, I didn’t struggle much turning it into a product. First, I had to decide which platform to develop it on. Building natively with Xcode and Android Studio didn’t make much sense for me, because I’m basically a one-man army. That means everything—from UI to coding—falls on me. Right at that moment, I decided to give FlutterFlow, known for rapid MVP development, a chance. I installed it on my MacBook and set everything up. My goal was to start coding at the beginning of March and release LOV by April 1st.
 
-
-
 ![](../../assets/uploads/chatgpt-image-5-mar-2026-22_50_21.png "Uygulamanın nasıl çalışacağını gösteren şema")
 
-I had a pretty fast start. Of course, I had worked on mobile apps before, but those were mostly part of my learning process. Apify seemed quite strong in terms of API capabilities, so I chose to use it. Development continued until April 1st, and I genuinely enjoyed the process. As you might guess, I didn’t make it by April 1st—but on February 26, LOV was released with support for more than 12 languages.
+I had a pretty fast start. Of course, I had worked on mobile apps before, but those were mostly part of my learning process. Apify seemed quite strong in terms of API capabilities, so I chose to use it. Development continued until April 1st, and I genuinely enjoyed the process. As you might guess, I didn’t make it by April 1st—but on April 26, LOV was released with support for more than 12 languages.
 
 Of course, summarizing the release process in one sentence would be unfair. Let’s talk about publishing, which was much harder than development.
 
