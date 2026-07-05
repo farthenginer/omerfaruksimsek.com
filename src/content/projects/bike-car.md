@@ -24,6 +24,10 @@ The project required both hardware and software development, including custom el
 
 To provide an engaging experience, the game includes dynamic camera transitions that automatically follow the leading racer, responsive engine audio that changes according to player speed, tire smoke effects, finish-line celebrations, and a complete winner presentation sequence.
 
+![](../../assets/uploads/bc5.png)
+
+![](../../assets/uploads/bc7.png)
+
 How It Works
 
 * Three players ride stationary exercise bikes simultaneously.
@@ -67,3 +71,11 @@ Players: 3 (Local Multiplayer)
 Architecture: Hardware–Software Integration
 
 Core Logic: Real-time pedal speed measurement, Arduino-to-Unity communication, and physics-based vehicle control.
+
+![](../../assets/uploads/bc3.png)
+
+![](../../assets/uploads/bc2.png)
+
+![](../../assets/uploads/bc1.png)
+
+![](../../assets/uploads/bc6.png)
