@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Video Defterim</title>
+
+<style>
+body{
+    margin:0;
+    background:#0f0f0f;
+    color:white;
+    font-family:sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+    padding:20px;
+}
+
+.box{
+    max-width:400px;
+}
+
+button{
+    margin-top:20px;
+    padding:14px 22px;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Video Defterim</h2>
+    <p id="message">Mağaza açılıyor...</p>
+
+    <button id="openBtn" style="display:none;">
+        Uygulamayı Aç
+    </button>
+</div>
+
+<script>
+
+const PLAY_STORE =
+"https://play.google.com/store/apps/details?id=com.omerfaruk.videodefterim";
+
+const APP_STORE =
+"https://apps.apple.com/tr/app/video-defterim/id6768731280?l=tr";
+
+const userAgent =
+navigator.userAgent || navigator.vendor || window.opera;
+
+let target = null;
+
+if (/android/i.test(userAgent)) {
+
+    target = PLAY_STORE;
+
+}
+else if (
+    /iPad|iPhone|iPod/.test(userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+) {
+
+    target = APP_STORE;
+
+}
+
+function redirect() {
+    if(target){
+        window.location.replace(target);
+    }
+}
+
+if(target){
+
+    redirect();
+
+    setTimeout(() => {
+
+        document.getElementById("message").innerText =
+        "Eğer mağaza açılmadıysa aşağıdaki butona dokun.";
+
+        const btn = document.getElementById("openBtn");
+
+        btn.style.display = "inline-block";
+
+        btn.onclick = redirect;
+
+    }, 1500);
+
+}
+else{
+
+    document.getElementById("message").innerText =
+    "Lütfen mobil cihazdan giriş yap.";
+
+}
+
+</script>
+
+</body>
+</html>
