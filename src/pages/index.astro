@@ -5,28 +5,20 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import settings from '../data/settings.json';
 
 const posts = (await getCollection('blog'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 3);
 
-const CHANNEL_ID = 'UCyzLwt5coLobMsAB5HUujYQ'; // <-- kendi kanal ID'inle değiştir
-
-let latestVideo = null;
-try {
-	const res = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`);
-	const xml = await res.text();
-	const videoIdMatch = xml.match(/<yt:videoId>(.*?)<\/yt:videoId>/);
-	const titleMatch = xml.match(/<media:title>(.*?)<\/media:title>/);
-	if (videoIdMatch && titleMatch) {
-		latestVideo = {
-			id: videoIdMatch[1],
-			title: titleMatch[1],
-		};
-	}
-} catch (e) {
-	console.error('YouTube feed alınamadı:', e);
+// YouTube linkinden video ID çıkar (watch?v=, youtu.be/, embed/ hepsini destekler)
+function getYoutubeId(url: string | undefined) {
+	if (!url) return null;
+	const match = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+	return match ? match[1] : null;
 }
+
+const videoId = getYoutubeId(settings.youtubeUrl);
 ---
 
 <!doctype html>
@@ -69,21 +61,26 @@ try {
 			</section>
 
 			<!-- LATEST YOUTUBE VIDEO -->
-			{latestVideo && (
+			{videoId && (
 				<section class="latest-video">
 					<div class="section-header">
 						<h2>Latest Video</h2>
-						<a href={`https://www.youtube.com/watch?v=${latestVideo.id}`} class="see-all" target="_blank" rel="noopener">Watch on YouTube →</a>
+						<a href={`https://www.youtube.com/watch?v=${videoId}`} class="see-all" target="_blank" rel="noopener">Watch on YouTube →</a>
 					</div>
-					<div class="video-wrapper">
-						<iframe
-							src={`https://www.youtube.com/embed/${latestVideo.id}`}
-							title={latestVideo.title}
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen
-							loading="lazy"
-						></iframe>
+					<div class="video-box" data-video-id={videoId}>
+						<div class="video-facade">
+							<img
+								src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+								alt="Latest YouTube video thumbnail"
+								loading="lazy"
+							/>
+							<button class="play-button" aria-label="Videoyu oynat" type="button">
+								<svg viewBox="0 0 68 48" width="68" height="48">
+									<path d="M66.52 7.74a8.5 8.5 0 0 0-6-6C55.94 0 34 0 34 0S12.06 0 6.48 1.74a8.5 8.5 0 0 0-6 6C0 13.28 0 24 0 24s0 10.72 1.48 16.26a8.5 8.5 0 0 0 6 6C12.06 48 34 48 34 48s21.94 0 27.52-1.74a8.5 8.5 0 0 0 6-6C68 34.72 68 24 68 24s0-10.72-1.48-16.26z" fill="#f00"/>
+									<path d="M45 24 27 14v20" fill="#fff"/>
+								</svg>
+							</button>
+						</div>
 					</div>
 				</section>
 			)}
@@ -144,6 +141,21 @@ try {
 					}
 				});
 			}
+		</script>
+		<script is:inline>
+			document.querySelectorAll('.video-facade').forEach((facade) => {
+				facade.addEventListener('click', () => {
+					const box = facade.closest('.video-box');
+					const id = box.dataset.videoId;
+					const iframe = document.createElement('iframe');
+					iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+					iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+					iframe.allowFullscreen = true;
+					iframe.frameBorder = '0';
+					iframe.title = 'YouTube video player';
+					facade.replaceWith(iframe);
+				}, { once: true });
+			});
 		</script>
 	</body>
 </html>
@@ -256,22 +268,60 @@ try {
 		margin-bottom: 3rem;
 	}
 
-	.video-wrapper {
+	.video-box {
 		position: relative;
 		width: 100%;
 		padding-top: 56.25%; /* 16:9 oran */
 		border-radius: 10px;
 		overflow: hidden;
 		border: 1px solid var(--border);
+		background: var(--bg-secondary);
 	}
 
-	.video-wrapper iframe {
+	.video-box iframe {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
 		border: 0;
+	}
+
+	.video-facade {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+	}
+
+	.video-facade img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.play-button {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 68px;
+		height: 48px;
+		background: none;
+		border: none;
+		cursor: pointer;
+		opacity: 0.9;
+		transition: opacity 0.15s ease, transform 0.15s ease;
+	}
+
+	.video-facade:hover .play-button {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1.05);
 	}
 
 	/* ABOUT SNIPPET */

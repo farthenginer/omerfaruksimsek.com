@@ -32,3 +32,12 @@ collections:
       - { label: "Live URL", name: "liveUrl", widget: "string", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "src/data/settings.json"
+        fields:
+          - { label: "Latest YouTube Video URL", name: "youtubeUrl", widget: "string", required: false, hint: "Videonun tam YouTube linkini yapıştır (watch?v=... veya youtu.be/... olabilir)" }
