@@ -13,6 +13,18 @@ In this game, players navigate through a space environment, avoid obstacles, and
 
 ![](../../assets/uploads/echox-5.png)
 
+```
+<video
+  src="VIDEO_LINKIN"
+  autoplay
+  muted
+  loop
+  playsinline
+  controls
+  style="width: 100%; max-width: 400px; border-radius: 20px;"
+></video>
+```
+
 **Technical Details**
 
 * Engine: Unity
@@ -20,3 +32,21 @@ In this game, players navigate through a space environment, avoid obstacles, and
 * Mechanics: Procedural level generation
 * Systems: In-game shop and upgrades
 * Optimization: Mobile performance optimization
+
+`<video`
+
+`  src="VIDEO_LINKIN"`
+
+`  autoplay`
+
+`  muted`
+
+`  loop`
+
+`  playsinline`
+
+`  controls`
+
+`  style="width: 100%; max-width: 400px; border-radius: 20px;"`
+
+`></video>`
